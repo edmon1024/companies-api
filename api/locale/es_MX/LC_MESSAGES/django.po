@@ -1,0 +1,58 @@
+# Companies API.
+# Copyright (C) 2022
+# This file is distributed under the same license as the companies-api package.
+# Edmundo Andrade <edmon.af@gmail.com>, 2022.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-04-09 00:12-0500\n"
+"PO-Revision-Date: 2022-03-05 15:25-0600\n"
+"Last-Translator: Edmundo Andrade <edmon.af@gmail.com>\n"
+"Language-Team: Edmundo Andrade <edmon.af@gmail.com>\n"
+"Language: es_MX\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: companies/abstract_models.py:9
+msgid "Created at"
+msgstr "Creado en"
+
+#: companies/abstract_models.py:13
+msgid "Updated at"
+msgstr "Actualizado en"
+
+#: companies/apps.py:7 companies/models.py:37
+msgid "Company"
+msgstr "Compañia"
+
+#: companies/apps.py:8 companies/models.py:38
+msgid "Companies"
+msgstr "Compañias"
+
+#: companies/models.py:14
+msgid "Name"
+msgstr "Nombre"
+
+#: companies/models.py:20
+msgid "Description"
+msgstr "Descripción"
+
+#: companies/models.py:26
+msgid "Symbol"
+msgstr "Símbolo"
+
+#: companies/models.py:29
+msgid "Market values"
+msgstr "Valores de mercado"
+
+#: project/settings.py:123
+msgid "English"
+msgstr "Inglés"
+
+#: project/settings.py:124
+msgid "Spanish"
+msgstr "Español"

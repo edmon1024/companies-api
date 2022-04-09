@@ -1,0 +1,28 @@
+version: '3.7'
+
+services:
+  companies_prod_api:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    command: bash -c "python manage.py collectstatic --no-input &&
+      python manage.py migrate &&
+      gunicorn project.wsgi:application -b 0.0.0.0:8000"
+    image: companies-prod-api:latest
+    restart: always
+    container_name: companies_prod_api
+    env_file:
+      - .env
+    networks:
+      companies_prod_net:
+        ipv4_address: 172.31.0.3
+
+networks:
+  companies_prod_net:
+    name: companies_prod_net
+    ipam:
+      driver: default
+      config:
+        - subnet: 172.31.0.0/29
+
+

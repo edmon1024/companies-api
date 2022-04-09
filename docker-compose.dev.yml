@@ -1,0 +1,27 @@
+version: '3.7'
+
+services:
+  companies_dev_api:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    command: python manage.py runserver 0.0.0.0:8000
+    image: companies-dev-api:latest
+    container_name: companies_dev_api
+    env_file:
+      - .env
+    volumes:
+      - ./api:/code
+    networks:
+      companies_dev_net:
+        ipv4_address: 172.30.0.3
+
+networks:
+  companies_dev_net:
+    name: companies_dev_net
+    ipam:
+      driver: default
+      config:
+        - subnet: 172.30.0.0/29
+
+
