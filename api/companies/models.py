@@ -45,5 +45,6 @@ class Company(AbstractCreatedUpdatedAt):
     class Meta:
         verbose_name = _("Company")
         verbose_name_plural = _("Companies")
+        ordering = ["name",]
 
 
