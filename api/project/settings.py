@@ -166,6 +166,7 @@ LOCALE_PATHS = [
 if DEBUG == False:
     USE_X_FORWARDED_HOST = True
     SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+    CORS_ALLOWED_ORIGINS = json.loads(os.getenv("CORS_ALLOWED_ORIGINS", []))
 else:
     CORS_ALLOW_ALL_ORIGINS=True
 
