@@ -1,4 +1,5 @@
 import random
+from datetime import date, timedelta
 from rest_framework import serializers
 from django.utils.translation import ugettext_lazy as _
 
@@ -31,7 +32,20 @@ class CompanyRetrieveSerializer(CompanyListSerializer):
         read_only_fields = ('id','stock_market','created_at','updated_at',)
 
     def create(self, validated_data):
-        stock_market = [round(random.uniform(100, 500),2) for idx in range(49)]
+        stock_market = []
+        current_date = date.today()
+
+        for idx in range(50):
+            stock_market_date = current_date - timedelta((50-idx))
+
+            stock_market.append({
+                "date": str(stock_market_date),
+                "O":round(random.uniform(100, 500),2),
+                "H":round(random.uniform(251, 500),2),
+                "L":round(random.uniform(100, 250),2),
+                "C":round(random.uniform(100, 500),2),
+            })
+
         company = Company.objects.create(**validated_data, stock_market=stock_market)
 
         return company
