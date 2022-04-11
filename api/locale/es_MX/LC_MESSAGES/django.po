@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-04-09 00:12-0500\n"
+"POT-Creation-Date: 2022-04-11 07:44-0500\n"
 "PO-Revision-Date: 2022-03-05 15:25-0600\n"
 "Last-Translator: Edmundo Andrade <edmon.af@gmail.com>\n"
 "Language-Team: Edmundo Andrade <edmon.af@gmail.com>\n"
@@ -25,34 +25,40 @@ msgstr "Creado en"
 msgid "Updated at"
 msgstr "Actualizado en"
 
-#: companies/apps.py:7 companies/models.py:37
+#: companies/apps.py:7 companies/models.py:46
 msgid "Company"
 msgstr "Compañia"
 
-#: companies/apps.py:8 companies/models.py:38
+#: companies/apps.py:8 companies/models.py:47
 msgid "Companies"
 msgstr "Compañias"
 
-#: companies/models.py:14
+#: companies/models.py:20
 msgid "Name"
 msgstr "Nombre"
 
-#: companies/models.py:20
+#: companies/models.py:27
 msgid "Description"
 msgstr "Descripción"
 
-#: companies/models.py:26
-msgid "Symbol"
+#: companies/models.py:34
+msgid "Ticker"
 msgstr "Símbolo"
 
-#: companies/models.py:29
-msgid "Market values"
+#: companies/models.py:38
+msgid "Stock market"
 msgstr "Valores de mercado"
 
-#: project/settings.py:123
+#: project/settings.py:124
 msgid "English"
 msgstr "Inglés"
 
-#: project/settings.py:124
+#: project/settings.py:125
 msgid "Spanish"
 msgstr "Español"
+
+#~ msgid "Market values"
+#~ msgstr "Valores de mercado"
+
+#~ msgid "Symbol"
+#~ msgstr "Símbolo"

@@ -7,14 +7,14 @@ from companies.models import (
 @admin.register(Company)
 class CompanyAdmin(admin.ModelAdmin):
     list_display = (
-        "id","name","symbol",
+        "id","name","ticker",
         "created_at","updated_at",
     )
     fields = (
-        "id","name","description","symbol",
-        "market_values","created_at","updated_at",
+        "id","name","description","ticker",
+        "stock_market","created_at","updated_at",
     )
     readonly_fields = ("id","created_at","updated_at",)
-    search_fields = ("name","symbol",)
+    search_fields = ("name","ticker","description",)
 
 

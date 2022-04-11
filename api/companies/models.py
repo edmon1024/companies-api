@@ -18,21 +18,24 @@ class Company(AbstractCreatedUpdatedAt):
         null=False,
         blank=False,
         verbose_name=_("Name"),
+        default="",
     )
     description = models.CharField(
         max_length=100,
         null=False,
         blank=False,
         verbose_name=_("Description"),
+        default="",
     )
-    symbol = models.CharField(
+    ticker = models.CharField(
         max_length=10,
         null=False,
         blank=False,
-        verbose_name=_("Symbol"),
+        verbose_name=_("Ticker"),
+        default="",
     )
-    market_values = models.JSONField(
-        verbose_name=_("Market values"),
+    stock_market = models.JSONField(
+        verbose_name=_("Stock market"),
         default=list,
     )
 

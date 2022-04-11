@@ -12,6 +12,7 @@ markdown = "==3.3.6"
 django-filter = "==21.1"
 django-extensions = "==3.1.5"
 drf-yasg = "==1.20.0"
+django-cors-headers = "==3.11.0"
 
 [dev-packages]
 flake8 = "==4.0.1"
