@@ -1,8 +1,8 @@
 import random
+import requests
 from datetime import date, timedelta
 from rest_framework import serializers
 from django.utils.translation import ugettext_lazy as _
-
 from .models import (
     Company,
 )
@@ -34,6 +34,30 @@ class CompanyRetrieveSerializer(CompanyListSerializer):
     def create(self, validated_data):
         stock_market = []
         current_date = date.today()
+        ticker = validated_data.get("ticker","")
+        ticker_validation = False
+
+        r = requests.request(
+            "POST",
+            url="https://www.nyse.com/api/quotes/filter", 
+            json={
+                "instrumentType": "EQUITY",
+                "pageNumber": 1,
+                "sortColumn": "NORMALIZED_TICKER",
+                "maxResultsPerPage": 10,
+                "filterToken": ticker,
+            }
+        )
+        res = r.json()
+
+        if bool(res): 
+            ticker_validation = True
+
+        if ticker_validation == False:
+            raise serializers.ValidationError({
+                "ticker": _("The ticker structure is wrong")
+            })
+
 
         for idx in range(50):
             stock_market_date = current_date - timedelta((50-idx))

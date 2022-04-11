@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-04-11 07:44-0500\n"
+"POT-Creation-Date: 2022-04-11 16:49-0500\n"
 "PO-Revision-Date: 2022-03-05 15:25-0600\n"
 "Last-Translator: Edmundo Andrade <edmon.af@gmail.com>\n"
 "Language-Team: Edmundo Andrade <edmon.af@gmail.com>\n"
@@ -48,6 +48,10 @@ msgstr "Símbolo"
 #: companies/models.py:38
 msgid "Stock market"
 msgstr "Valores de mercado"
+
+#: companies/serializers.py:58
+msgid "The ticker structure is wrong"
+msgstr "La estructura del sómbolo bursatil es incorrecto"
 
 #: project/settings.py:124
 msgid "English"
