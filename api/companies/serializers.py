@@ -77,6 +77,31 @@ class CompanyRetrieveSerializer(CompanyListSerializer):
 
     def update(self, instance, validated_data):
         instance.ticker = validated_data.get('ticker', instance.ticker)
+
+        ticker_validation = False
+
+        r = requests.request(
+            "POST",
+            url="https://www.nyse.com/api/quotes/filter",
+            json={
+                "instrumentType": "EQUITY",
+                "pageNumber": 1,
+                "sortColumn": "NORMALIZED_TICKER",
+                "maxResultsPerPage": 10,
+                "filterToken": instance.ticker,
+            }
+        )
+        res = r.json()
+
+        if bool(res):
+            ticker_validation = True
+
+        if ticker_validation == False:
+            raise serializers.ValidationError({
+                "ticker": _("The ticker structure is wrong")
+            })
+
+
         instance.name = validated_data.get('name', instance.name)
         instance.description = validated_data.get('description', instance.description)
         instance.save()
