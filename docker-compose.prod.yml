@@ -11,6 +11,9 @@ services:
     image: companies-prod-api:latest
     restart: always
     container_name: companies_prod_api
+    volumes:
+      - ./api/staticfiles:/code/staticfiles
+      - ./api/media:/code/media
     env_file:
       - .env
     networks:
