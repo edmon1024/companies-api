@@ -44,14 +44,17 @@ class CompanyRetrieveSerializer(CompanyListSerializer):
                 "instrumentType": "EQUITY",
                 "pageNumber": 1,
                 "sortColumn": "NORMALIZED_TICKER",
-                "maxResultsPerPage": 10,
+                "maxResultsPerPage": 1000,
                 "filterToken": ticker,
             }
         )
         res = r.json()
 
         if bool(res): 
-            ticker_validation = True
+            for item in res:
+                if item["symbolExchangeTicker"] == ticker:
+                    ticker_validation = True
+                    break
 
         if ticker_validation == False:
             raise serializers.ValidationError({
@@ -87,14 +90,17 @@ class CompanyRetrieveSerializer(CompanyListSerializer):
                 "instrumentType": "EQUITY",
                 "pageNumber": 1,
                 "sortColumn": "NORMALIZED_TICKER",
-                "maxResultsPerPage": 10,
+                "maxResultsPerPage": 1000,
                 "filterToken": instance.ticker,
             }
         )
         res = r.json()
 
         if bool(res):
-            ticker_validation = True
+            for item in res:
+                if item["symbolExchangeTicker"] == ticker:
+                    ticker_validation = True
+                    break
 
         if ticker_validation == False:
             raise serializers.ValidationError({
