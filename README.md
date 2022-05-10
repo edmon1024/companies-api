@@ -1,5 +1,5 @@
 # companies-api
-API REST para registro de empresas creado con el framework de Django. En terminos generales el proyecto fue creacon con guía de estilo con flake8, i18n, documentación del API con swagger/OpenAPI 2.0, test unitarios con unittest
+API REST para registro de empresas creado con el framework de Django. En terminos generales el proyecto fue creado con con guía de estilo con flake8, i18n, documentación del API con swagger/OpenAPI 2.0, test unitarios con unittest
 
 
 
